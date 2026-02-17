@@ -3,9 +3,16 @@
 
 A robust RESTful API built with Spring Boot to manage daily tasks. This application allows users to Create, Read, Update, and Delete (CRUD) tasks, featuring status tracking and database persistence.
 
-🚀 Features ✅Full CRUD Operations: Manage tasks efficiently. ✅Data Transfer Objects (DTO): Secure data handling using Java Records for request payloads. ✅Status Management: Tasks are categorized into Pending, In_progress, and Complete using Enums. ✅Database Persistence: Powered by Spring Data JPA and Hibernate. ✅API Documentation: Integrated Swagger/OpenAPI UI for easy testing.
+## 🚀 Features 
+*
 
-🧱 Project Architecture
+✅Full CRUD Operations: Manage tasks efficiently. 
+✅Data Transfer Objects (DTO): Secure data handling using Java Records for request payloads. 
+✅Status Management: Tasks are categorized into Pending, In_progress, and Complete using Enums. 
+✅Database Persistence: Powered by Spring Data JPA and Hibernate.
+✅API Documentation: Integrated Swagger/OpenAPI UI for easy testing.
+
+##🧱 Project Architecture
 
 The project follows a standard layered Spring Boot architecture:
 
