@@ -1,10 +1,8 @@
 # Task Management System
-*
 
 A robust RESTful API built with Spring Boot to manage daily tasks. This application allows users to Create, Read, Update, and Delete (CRUD) tasks, featuring status tracking and database persistence.
 
 ## 🚀 Features 
-*
 
 ✅Full CRUD Operations: Manage tasks efficiently. 
 ✅Data Transfer Objects (DTO): Secure data handling using Java Records for request payloads. 
