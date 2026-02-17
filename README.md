@@ -4,7 +4,7 @@ A robust RESTful API built with Spring Boot to manage daily tasks. This applicat
 
 ## 🚀 Features 
 
-*✅Full CRUD Operations: Manage tasks efficiently. 
++ ✅Full CRUD Operations: Manage tasks efficiently. 
 ✅Data Transfer Objects (DTO): Secure data handling using Java Records for request payloads. 
 ✅Status Management: Tasks are categorized into Pending, In_progress, and Complete using Enums. 
 ✅Database Persistence: Powered by Spring Data JPA and Hibernate.
