@@ -16,7 +16,7 @@ The project follows a standard layered Spring Boot architecture:
 
 Controller Layer ↓ Service Layer ↓ Repository Layer (JPA) ↓ Database
 
-📂 Project Structure
+## 📂 Project Structure
 
 taskmanager
 ├───.mvn
@@ -38,7 +38,7 @@ taskmanager
 
 The status is stored as a STRING in the database.
 
-⚙️ Technologies Used
+## ⚙️ Technologies Used
 
 ➜Java ➜Spring Boot ➜Spring Web ➜Spring Data JPA ➜Hibernate ➜Lombok ➜REST API ➜PostgreSQL (or any relational database) ➜Swagger/OpenAPI (for API testing)
 
