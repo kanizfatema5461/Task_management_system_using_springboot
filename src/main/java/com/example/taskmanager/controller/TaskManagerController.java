@@ -19,7 +19,7 @@ public class TaskManagerController {
 
     // TASK ADD
 
-    @PostMapping("addtask")
+    @PostMapping("/tasks/addtask")
     public String addtask(@RequestBody TaskReqDto taskReqDto){
         taskManagerService.addtask(taskReqDto);
         return "Task Added Successfully";
@@ -28,21 +28,21 @@ public class TaskManagerController {
 
     //SINGLE TASK VIEW
 
-    @GetMapping("/{id}")
+    @GetMapping("/tasks/{id}")
     public TaskManagerEntity getById(@PathVariable Long id){
         return taskManagerService.getById(id);
     }
 
     //ALL TASK VIEW
 
-    @GetMapping("All")
+    @GetMapping("tasks/All")
     public List<TaskManagerEntity> getAll(){
         return taskManagerService.getAll();
     }
 
     //    UPDATE TASK
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/tasks/update/{id}")
     public String updateTask(@PathVariable Long id,
                                         @RequestBody TaskReqDto taskReqDto) {
         TaskManagerEntity updatedtask = taskManagerService.updatetask(id, taskReqDto);
@@ -59,7 +59,7 @@ public class TaskManagerController {
 
     //    DELETE TASK
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/tasks/{id}")
     public String delete(@PathVariable Long id){
         taskManagerService.deleteById(id);
         return "Deleted Successfully";
