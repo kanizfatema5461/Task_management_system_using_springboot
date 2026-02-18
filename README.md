@@ -18,9 +18,9 @@ Controller Layer ↓ Service Layer ↓ Repository Layer (JPA) ↓ Database
 
 ## 📂 Project Structure
 
-taskmanager
-├───.mvn
-│ └───wrapper
+> taskmanager
+>> ├───.mvn
+>>> │ └───wrapper
 ├───src
 │ ├───main
 │ │ ├───java
