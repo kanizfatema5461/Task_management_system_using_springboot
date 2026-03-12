@@ -7,10 +7,10 @@ import com.example.taskmanager.service.TaskManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-//import javax.swing.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/v1/tasks")
 public class TaskManagerController {
     @Autowired
     TaskManagerService taskManagerService;
@@ -19,7 +19,7 @@ public class TaskManagerController {
 
     // TASK ADD
 
-    @PostMapping("/tasks/addtask")
+    @PostMapping("/addtask")
     public String addtask(@RequestBody TaskReqDto taskReqDto){
         taskManagerService.addtask(taskReqDto);
         return "Task Added Successfully";
@@ -28,21 +28,21 @@ public class TaskManagerController {
 
     //SINGLE TASK VIEW
 
-    @GetMapping("/tasks/{id}")
+    @GetMapping("/{id}")
     public TaskManagerEntity getById(@PathVariable Long id){
         return taskManagerService.getById(id);
     }
 
     //ALL TASK VIEW
 
-    @GetMapping("tasks/All")
+    @GetMapping("/All")
     public List<TaskManagerEntity> getAll(){
         return taskManagerService.getAll();
     }
 
     //    UPDATE TASK
 
-    @PutMapping("/tasks/update/{id}")
+    @PutMapping("/update/{id}")
     public String updateTask(@PathVariable Long id,
                                         @RequestBody TaskReqDto taskReqDto) {
         TaskManagerEntity updatedtask = taskManagerService.updatetask(id, taskReqDto);
@@ -59,7 +59,7 @@ public class TaskManagerController {
 
     //    DELETE TASK
 
-    @DeleteMapping("/tasks/{id}")
+    @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         taskManagerService.deleteById(id);
         return "Deleted Successfully";
