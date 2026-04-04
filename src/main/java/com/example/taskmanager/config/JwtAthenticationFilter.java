@@ -8,7 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 // import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.stereotype.Component;
+// import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.example.taskmanager.service.JwtService;
@@ -19,15 +19,21 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse; 
-import lombok.RequiredArgsConstructor;
+// import lombok.RequiredArgsConstructor;
 
-@Component
-@RequiredArgsConstructor
+// @Component
+// @RequiredArgsConstructor
 public class JwtAthenticationFilter extends OncePerRequestFilter {
     
     private final JwtService jwtService;
 
     private final UserService userService;
+
+      public JwtAthenticationFilter(JwtService jwtService, UserService userService) {
+        this.jwtService = jwtService;
+        this.userService = userService;
+    }
+   
     
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -59,7 +65,7 @@ public class JwtAthenticationFilter extends OncePerRequestFilter {
 
                 token.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 securityContext.setAuthentication(token);
-                SecurityContextHolder.setContext(securityContext); 
+                SecurityContextHolder.setContext(securityContext);   
             }
         }
 

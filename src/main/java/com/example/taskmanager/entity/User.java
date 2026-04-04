@@ -1,5 +1,6 @@
 package com.example.taskmanager.entity;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -40,12 +41,21 @@ public class User implements  UserDetails {
     // @Enumerated(EnumType.STRING)
     private Role role;
 
-    private String verificationToken;
+    // private String verificationToken;
 
     // @Column(nullable = false)
     private Boolean enabled;
 
     private Boolean isDeleted = false;
+
+    @Column(nullable = false)
+    private boolean emailVerified = false;
+
+    @Column(name = "otp")
+    private String otp;
+
+    @Column(name = "otp_expiry_time")
+    private LocalDateTime otpExpiryTime;
 
 
 
@@ -79,7 +89,13 @@ public class User implements  UserDetails {
     @Override
     public boolean isEnabled() {
         return Boolean.TRUE.equals(enabled);
-    } 
+    }
+
+
+    
+    public boolean isEmailVerified() {
+    return emailVerified;
+    }
 
 
     // @Override

@@ -9,5 +9,11 @@ public interface UserService {
     UserDetailsService userDetailsService();
 
     String deleteUser(Long id);
-    
+
+
+    // forgot password related methods
+    void sendOtp(String email);
+    boolean verifyOtp(String email, String otp);
+    void resetPassword(String email, String newPassword);
+
 }

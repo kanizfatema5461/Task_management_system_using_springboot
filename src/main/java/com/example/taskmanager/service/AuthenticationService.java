@@ -12,13 +12,21 @@ public interface AuthenticationService {
 
     // User signup(SignupRequest signupRequest);
 
-    void signup(SignupRequest signupRequest);
+    // void signup(SignupRequest signupRequest);
+
+    String signup(SignupRequest signupRequest);
 
     JwtAuthenticationResponce signin(SigninRequest signinRequest);
 
     JwtAuthenticationResponce refreshToken(RefreshTokenRequest refreshTokenRequest);
 
-    String verifyUser(String token);
+    // String verifyUser(String token);
 
     String deleteUser(Long id);
+
+    String verifyOtp(String email, String otp);
+
+    String forgotPassword(String email);
+
+	String resetPassword(String email, String otp, String newPassword);
 }
